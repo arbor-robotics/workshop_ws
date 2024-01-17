@@ -7,7 +7,7 @@ using arbor::chatter_cpp::TalkerNode;
  * member function as a callback from the timer. */
 
 TalkerNode::TalkerNode()
-    : Node("talker_node"), count_(0)
+    : Node("cpp_talker_node"), count_(0)
 {
   publisher_ = this->create_publisher<std_msgs::msg::String>("chatter", 10);
   timer_ = this->create_wall_timer(

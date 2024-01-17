@@ -8,7 +8,7 @@ using std::placeholders::_1;
  * member function as a callback from the timer. */
 
 ListenerNode::ListenerNode()
-    : Node("listener_node")
+    : Node("cpp_listener_node")
 {
   subscriber_ = this->create_subscription<std_msgs::msg::String>("chatter", 10, std::bind(&ListenerNode::topic_cb, this, _1));
 }
