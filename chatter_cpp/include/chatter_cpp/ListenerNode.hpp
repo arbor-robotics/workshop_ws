@@ -19,23 +19,24 @@
 
 #include "rclcpp/rclcpp.hpp"
 
+using std_msgs::msg::String;
+
+
 namespace arbor
 {
     namespace chatter_cpp
     {
 
-        class TalkerNode : public rclcpp::Node
+        class ListenerNode : public rclcpp::Node
         {
         public:
-            TalkerNode();
-            virtual ~TalkerNode();
+            ListenerNode();
+            virtual ~ListenerNode();
 
         private:
-            void timer_callback();
+            void topic_cb(const String::SharedPtr msg) const;
 
-            rclcpp::TimerBase::SharedPtr timer_;
-            rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
-            size_t count_;
+            rclcpp::Subscription<String>::SharedPtr subscriber_;
         };
 
     }

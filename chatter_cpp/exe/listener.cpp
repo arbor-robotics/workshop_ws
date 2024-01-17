@@ -10,7 +10,7 @@
 #include <iostream>
 #include <memory> // std::make_shared
 #include "rclcpp/rclcpp.hpp"
-#include "chatter_cpp/TalkerNode.hpp"
+#include "chatter_cpp/ListenerNode.hpp"
 
 int main(int argc, char * argv[]) {
   rclcpp::init(argc, argv);

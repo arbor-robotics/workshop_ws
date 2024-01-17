@@ -11,12 +11,12 @@ TalkerNode::TalkerNode()
 {
   publisher_ = this->create_publisher<std_msgs::msg::String>("chatter", 10);
   timer_ = this->create_wall_timer(
-      500ms, std::bind(&TalkerNode::timer_callback, this));
+      500ms, std::bind(&TalkerNode::timer_cb, this));
 }
 
 TalkerNode::~TalkerNode() {}
 
-void TalkerNode::timer_callback()
+void TalkerNode::timer_cb()
 {
   auto message = std_msgs::msg::String();
   message.data = "Hello, world! " + std::to_string(count_++);

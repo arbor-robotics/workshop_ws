@@ -31,7 +31,7 @@ namespace arbor
             virtual ~TalkerNode();
 
         private:
-            void timer_callback();
+            void timer_cb();
 
             rclcpp::TimerBase::SharedPtr timer_;
             rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
